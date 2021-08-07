@@ -191,19 +191,18 @@ class _HomePageState extends State<HomePage>
 
   Widget component1(
       IconData icon, String hintText, bool isPassword, bool isEmail) {
-    double _width = MediaQuery.of(context).size.width;
+    Size size = MediaQuery.of(context).size;
     return Container(
-      height: _width / 8,
-      width: _width / 1.22,
+      height: size.width / 8,
+      width: size.width / 1.22,
       alignment: Alignment.center,
-      padding: EdgeInsets.only(right: _width / 30),
+      padding: EdgeInsets.only(right: size.width / 30),
       decoration: BoxDecoration(
         color: Colors.black.withOpacity(.05),
         borderRadius: BorderRadius.circular(10),
       ),
       child: TextField(
         style: TextStyle(color: Colors.black.withOpacity(.8)),
-        // cursorColor: Colors.white,
         obscureText: isPassword,
         keyboardType: isEmail ? TextInputType.emailAddress : TextInputType.text,
         decoration: InputDecoration(
@@ -222,17 +221,17 @@ class _HomePageState extends State<HomePage>
   }
 
   Widget component2(String string, double width, VoidCallback voidCallback) {
-    double _width = MediaQuery.of(context).size.width;
+    Size size = MediaQuery.of(context).size;
     return InkWell(
       highlightColor: Colors.transparent,
       splashColor: Colors.transparent,
       onTap: voidCallback,
       child: Container(
-        height: _width / 8,
-        width: _width / width,
+        height: size.width / 8,
+        width: size.width / width,
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          color: Color(0xff4796FF),
+          color: Color(0xff4796ff),
           borderRadius: BorderRadius.circular(10),
         ),
         child: Text(
